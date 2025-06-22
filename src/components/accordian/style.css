@@ -1,0 +1,100 @@
+/* Light and Dark Mode Basics */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  body:not(.dark) {
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    text-align: right;
+    padding: 1rem;
+  }
+  
+  .theme-toggle button {
+    background: transparent;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Accordion wrapper */
+  .wrapper {
+    max-width: 600px;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  body.dark .wrapper {
+    background-color: #2b2b2b;
+  }
+  
+  body:not(.dark) .wrapper {
+    background-color: #ffffff;
+  }
+  
+  /* Accordion items */
+  .accordion {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+  }
+  
+  /* Accordion title */
+  .title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .title:hover {
+    color: #4fc3f7;
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.open {
+    transform: rotate(90deg);
+    color: #4fc3f7;
+  }
+  
+  /* Content */
+  .content {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
